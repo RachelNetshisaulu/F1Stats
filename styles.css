@@ -108,7 +108,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   white-space: nowrap;
 }
 .logo-f1 {
-  color: var(--accent);
   background: var(--accent);
   color: #fff;
   padding: 2px 6px;
@@ -185,6 +184,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   overflow: hidden;
   padding: 80px 24px;
+  /* Always dark internally — text must always be white regardless of theme */
+  color: #fff;
 }
 
 .hero-bg {
@@ -192,6 +193,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   inset: 0;
   background: radial-gradient(ellipse at 30% 50%, #1a0000 0%, #0d0d0d 60%);
   z-index: 0;
+}
+
+/* Always-dark overlay — guarantees white text in light mode */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 1;
+}
+/* In dark mode the overlay can be lighter since bg is already dark */
+[data-theme="dark"] .hero-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hero-track-lines {
@@ -239,6 +252,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-transform: uppercase;
   letter-spacing: -2px;
   max-width: 600px;
+  color: #fff; /* Always white — hero is always on dark overlay */
 }
 .hero-title em {
   font-style: italic;
@@ -247,10 +261,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .hero-sub {
   margin-top: 20px;
-  color: var(--text-sec);
+  color: rgba(255,255,255,0.7); /* Always white-ish — dark overlay beneath */
   font-size: 1.05rem;
   max-width: 420px;
 }
+
 
 /* Race Card (hero overlay) */
 .hero-race-card {
@@ -266,6 +281,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   min-width: 280px;
   z-index: 3;
   box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  /* Race card uses theme colors, not locked to white */
+  color: var(--text);
 }
 
 .race-card-label {
@@ -915,12 +932,70 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-links a { font-size: 0.78rem; color: var(--text-sec); transition: color var(--trans); }
 .footer-links a:hover { color: var(--accent); }
 
+/* ── HAMBURGER ─────────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 8px;
+  transition: background var(--trans);
+}
+.hamburger:hover { background: var(--bg-hover); }
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE NAV DRAWER ─────────────────────────────────────── */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+.mobile-nav.open {
+  max-height: 320px;
+}
+.mobile-nav-link {
+  display: block;
+  padding: 14px 24px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-sec);
+  border-bottom: 1px solid var(--border);
+  transition: color var(--trans), background var(--trans);
+}
+.mobile-nav-link:last-child { border-bottom: none; }
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--accent);
+  background: var(--bg-hover);
+}
+
 /* ── ANIMATIONS ────────────────────────────────────────────── */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.page.active { animation: fadeIn 0.25s ease both; }
+main { animation: fadeIn 0.25s ease both; }
 
 /* ── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 900px) {
@@ -930,6 +1005,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 @media (max-width: 640px) {
   .main-nav { display: none; }
+  .hamburger { display: flex; }
+  .mobile-nav { display: flex; }
   .stats-strip { flex-wrap: wrap; }
   .stat-item { padding: 16px 24px; }
   .hero { padding: 48px 20px; }

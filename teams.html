@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-team="default">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F1Stats — Teams 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav-header">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-f1">F1</span><span class="logo-stats">STATS</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="drivers.html" class="nav-link">Drivers</a>
+        <a href="teams.html" class="nav-link active">Teams</a>
+        <a href="standings.html" class="nav-link">Standings</a>
+        <a href="calendar.html" class="nav-link">Calendar</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" onclick="toggleTheme()"><span class="theme-icon">☀</span></button>
+        <button class="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="drivers.html" class="mobile-nav-link">Drivers</a>
+      <a href="teams.html" class="mobile-nav-link active">Teams</a>
+      <a href="standings.html" class="mobile-nav-link">Standings</a>
+      <a href="calendar.html" class="mobile-nav-link">Calendar</a>
+    </nav>
+    <div class="team-bar"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <h1 class="page-title">Teams</h1>
+      <p class="page-sub">2026 Constructor Grid — 11 teams, new era</p>
+    </section>
+    <div class="teams-list">
+
+      <!-- 1st: Mercedes -->
+      <div class="team-row" onclick="selectTeamTheme('mercedes')">
+        <div class="team-color-bar" style="background:var(--team-mercedes)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-mercedes);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">AMG</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Mercedes-AMG</div>
+          <div class="team-row-drivers">Russell · Antonelli</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">98</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">1st</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:100%;background:var(--team-mercedes)"></div></div>
+      </div>
+
+      <!-- 2nd: Ferrari -->
+      <div class="team-row" onclick="selectTeamTheme('ferrari')">
+        <div class="team-color-bar" style="background:var(--team-ferrari)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-ferrari);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">SF</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Scuderia Ferrari</div>
+          <div class="team-row-drivers">Leclerc · Hamilton</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">67</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">2nd</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:68%;background:var(--team-ferrari)"></div></div>
+      </div>
+
+      <!-- 3rd: McLaren -->
+      <div class="team-row" onclick="selectTeamTheme('mclaren')">
+        <div class="team-color-bar" style="background:var(--team-mclaren)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-mclaren);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">MCL</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">McLaren</div>
+          <div class="team-row-drivers">Norris · Piastri</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">18</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">3rd</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:18%;background:var(--team-mclaren)"></div></div>
+      </div>
+
+      <!-- 4th: TGR Haas -->
+      <div class="team-row" onclick="selectTeamTheme('haas')">
+        <div class="team-color-bar" style="background:var(--team-haas)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-haas);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">HAS</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">TGR Haas F1</div>
+          <div class="team-row-drivers">Bearman · Ocon</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">17</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">4th</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:17%;background:var(--team-haas)"></div></div>
+      </div>
+
+      <!-- 5th: Red Bull -->
+      <div class="team-row" onclick="selectTeamTheme('redbull')">
+        <div class="team-color-bar" style="background:var(--team-redbull)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-redbull);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">RBR</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Red Bull Racing</div>
+          <div class="team-row-drivers">Verstappen · Hadjar</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">12</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">5th</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:12%;background:var(--team-redbull)"></div></div>
+      </div>
+
+      <!-- 6th: Racing Bulls -->
+      <div class="team-row" onclick="selectTeamTheme('rb')">
+        <div class="team-color-bar" style="background:var(--team-rb)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-rb);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">RB</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Racing Bulls</div>
+          <div class="team-row-drivers">Lawson · Lindblad</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">12</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">6th</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:12%;background:var(--team-rb)"></div></div>
+      </div>
+
+      <!-- 7th: Alpine -->
+      <div class="team-row" onclick="selectTeamTheme('alpine')">
+        <div class="team-color-bar" style="background:var(--team-alpine)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-alpine);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">ALP</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Alpine</div>
+          <div class="team-row-drivers">Gasly · Colapinto</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">10</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">7th</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:10%;background:var(--team-alpine)"></div></div>
+      </div>
+
+      <!-- 8th: Audi — NEW TEAM -->
+      <div class="team-row" onclick="selectTeamTheme('sauber')">
+        <div class="team-color-bar" style="background:var(--team-sauber)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-sauber);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">ADI</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Audi F1 Team 🆕</div>
+          <div class="team-row-drivers">Hülkenberg · Bortoleto</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">2</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">8th</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:2%;background:var(--team-sauber)"></div></div>
+      </div>
+
+      <!-- 9th: Williams -->
+      <div class="team-row" onclick="selectTeamTheme('williams')">
+        <div class="team-color-bar" style="background:var(--team-williams)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-williams);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">WIL</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Williams Racing</div>
+          <div class="team-row-drivers">Albon · Sainz</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">2</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">9th</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:2%;background:var(--team-williams)"></div></div>
+      </div>
+
+      <!-- 10th: Cadillac — NEW TEAM -->
+      <div class="team-row" onclick="selectTeamTheme('default')">
+        <div class="team-color-bar" style="background:#B40A29"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:#B40A29;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">CAD</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Cadillac F1 🆕</div>
+          <div class="team-row-drivers">Bottas · Pérez</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">0</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">10th</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:0%;background:#B40A29"></div></div>
+      </div>
+
+      <!-- 11th: Aston Martin -->
+      <div class="team-row" onclick="selectTeamTheme('aston')">
+        <div class="team-color-bar" style="background:var(--team-aston)"></div>
+        <div class="team-logo-wrap">
+          <div style="width:64px;height:36px;background:var(--team-aston);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">AMR</div>
+        </div>
+        <div class="team-row-info">
+          <div class="team-row-name">Aston Martin</div>
+          <div class="team-row-drivers">Alonso · Stroll</div>
+        </div>
+        <div class="team-row-stats">
+          <div class="trs"><span class="trs-val">0</span><span class="trs-lbl">PTS</span></div>
+          <div class="trs"><span class="trs-val">11th</span><span class="trs-lbl">Constructor</span></div>
+        </div>
+        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:0%;background:var(--team-aston)"></div></div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">F1<span>STATS</span></div>
+      <p class="footer-copy">2026 season standings after Round 2. Not affiliated with Formula 1®.</p>
+      <div class="footer-links">
+        <a href="https://openf1.org/" target="_blank">OpenF1</a>
+        <a href="https://flagcdn.com" target="_blank">FlagCDN</a>
+        <a href="https://www.formula1.com" target="_blank">Formula1.com</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

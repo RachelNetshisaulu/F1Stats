@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-team="default">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F1Stats — Drivers 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav-header">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-f1">F1</span><span class="logo-stats">STATS</span></a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="drivers.html" class="nav-link active">Drivers</a>
+        <a href="teams.html" class="nav-link">Teams</a>
+        <a href="standings.html" class="nav-link">Standings</a>
+        <a href="calendar.html" class="nav-link">Calendar</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" onclick="toggleTheme()"><span class="theme-icon">☀</span></button>
+        <button class="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="drivers.html" class="mobile-nav-link active">Drivers</a>
+      <a href="teams.html" class="mobile-nav-link">Teams</a>
+      <a href="standings.html" class="mobile-nav-link">Standings</a>
+      <a href="calendar.html" class="mobile-nav-link">Calendar</a>
+    </nav>
+    <div class="team-bar"></div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <h1 class="page-title">Drivers</h1>
+      <p class="page-sub">2026 Championship Grid — All 22 Drivers</p>
+    </section>
+
+    <section class="drivers-grid-section" style="padding-bottom:56px">
+      <div class="drivers-grid">
+
+        <!-- McLaren -->
+        <div class="driver-card" onclick="selectTeamTheme('mclaren')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-mclaren) 0%,#1a1a1a 100%)">
+            <img src="images/norris.jpg" alt="Norris" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Lando+Norris&background=FF8000&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">1</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/gb.png" alt="GB" class="driver-flag"/><span class="driver-card-name">Lando Norris 🏆</span></div>
+            <div class="driver-card-team" style="color:var(--team-mclaren)">McLaren</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">15</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('mclaren')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-mclaren) 0%,#1a1a1a 100%)">
+            <img src="images/piastri.jpg" alt="Piastri" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Oscar+Piastri&background=FF8000&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">81</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/au.png" alt="AU" class="driver-flag"/><span class="driver-card-name">Oscar Piastri</span></div>
+            <div class="driver-card-team" style="color:var(--team-mclaren)">McLaren</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">3</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mercedes -->
+        <div class="driver-card" onclick="selectTeamTheme('mercedes')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-mercedes) 0%,#0a2020 100%)">
+            <img src="images/russell.jpg" alt="Russell" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=George+Russell&background=00D2BE&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">63</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/gb.png" alt="GB" class="driver-flag"/><span class="driver-card-name">George Russell</span></div>
+            <div class="driver-card-team" style="color:var(--team-mercedes)">Mercedes</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">51</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">1</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">2</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('mercedes')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-mercedes) 0%,#0a2020 100%)">
+            <img src="images/antonelli.jpg" alt="Antonelli" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Kimi+Antonelli&background=00D2BE&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">12</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/it.png" alt="IT" class="driver-flag"/><span class="driver-card-name">Kimi Antonelli</span></div>
+            <div class="driver-card-team" style="color:var(--team-mercedes)">Mercedes</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">47</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">1</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">2</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Red Bull -->
+        <div class="driver-card" onclick="selectTeamTheme('redbull')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-redbull) 0%,#1a1a2e 100%)">
+            <img src="images/verstappen.jpg" alt="Verstappen" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Max+Verstappen&background=3671C6&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">3</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/nl.png" alt="NL" class="driver-flag"/><span class="driver-card-name">Max Verstappen</span></div>
+            <div class="driver-card-team" style="color:var(--team-redbull)">Red Bull Racing</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">8</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('redbull')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-redbull) 0%,#1a1a2e 100%)">
+            <img src="images/hadjar.jpg" alt="Hadjar" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Isack+Hadjar&background=3671C6&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">22</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="driver-flag"/><span class="driver-card-name">Isack Hadjar</span></div>
+            <div class="driver-card-team" style="color:var(--team-redbull)">Red Bull Racing</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">4</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ferrari -->
+        <div class="driver-card" onclick="selectTeamTheme('ferrari')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-ferrari) 0%,#2a0000 100%)">
+            <img src="images/leclerc.jpg" alt="Leclerc" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Charles+Leclerc&background=E8002D&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">16</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/mc.png" alt="MC" class="driver-flag"/><span class="driver-card-name">Charles Leclerc</span></div>
+            <div class="driver-card-team" style="color:var(--team-ferrari)">Scuderia Ferrari</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">34</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">1</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('ferrari')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-ferrari) 0%,#2a0000 100%)">
+            <img src="images/hamilton.jpg" alt="Hamilton" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Lewis+Hamilton&background=E8002D&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">44</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/gb.png" alt="GB" class="driver-flag"/><span class="driver-card-name">Lewis Hamilton</span></div>
+            <div class="driver-card-team" style="color:var(--team-ferrari)">Scuderia Ferrari</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">33</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">1</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Williams -->
+        <div class="driver-card" onclick="selectTeamTheme('williams')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-williams) 0%,#0a0a2a 100%)">
+            <img src="images/albon.jpg" alt="Albon" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Alexander+Albon&background=64C4FF&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">23</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/th.png" alt="TH" class="driver-flag"/><span class="driver-card-name">Alexander Albon</span></div>
+            <div class="driver-card-team" style="color:var(--team-williams)">Williams Racing</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('williams')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-williams) 0%,#0a0a2a 100%)">
+            <img src="images/sainz.jpg" alt="Sainz" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Carlos+Sainz&background=64C4FF&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">55</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="driver-flag"/><span class="driver-card-name">Carlos Sainz</span></div>
+            <div class="driver-card-team" style="color:var(--team-williams)">Williams Racing</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">2</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Racing Bulls -->
+        <div class="driver-card" onclick="selectTeamTheme('rb')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-rb) 0%,#0a0a1a 100%)">
+            <img src="images/lawson.jpg" alt="Lawson" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Liam+Lawson&background=6692FF&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">30</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/nz.png" alt="NZ" class="driver-flag"/><span class="driver-card-name">Liam Lawson</span></div>
+            <div class="driver-card-team" style="color:var(--team-rb)">Racing Bulls</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">8</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('rb')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-rb) 0%,#0a0a1a 100%)">
+            <img src="images/lindblad.jpg" alt="Lindblad" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Arvid+Lindblad&background=6692FF&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">41</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/gb.png" alt="GB" class="driver-flag"/><span class="driver-card-name">Arvid Lindblad 🆕</span></div>
+            <div class="driver-card-team" style="color:var(--team-rb)">Racing Bulls</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">4</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aston Martin -->
+        <div class="driver-card" onclick="selectTeamTheme('aston')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-aston) 0%,#0a1a10 100%)">
+            <img src="images/alonso.jpg" alt="Alonso" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Fernando+Alonso&background=229971&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">14</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="driver-flag"/><span class="driver-card-name">Fernando Alonso</span></div>
+            <div class="driver-card-team" style="color:var(--team-aston)">Aston Martin</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('aston')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-aston) 0%,#0a1a10 100%)">
+            <img src="images/stroll.jpg" alt="Stroll" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Lance+Stroll&background=229971&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">18</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/ca.png" alt="CA" class="driver-flag"/><span class="driver-card-name">Lance Stroll</span></div>
+            <div class="driver-card-team" style="color:var(--team-aston)">Aston Martin</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TGR Haas -->
+        <div class="driver-card" onclick="selectTeamTheme('haas')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,#555 0%,#1a1a1a 100%)">
+            <img src="images/bearman.jpg" alt="Bearman" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Oliver+Bearman&background=B6BABD&color=111&size=150&bold=true'"/>
+            <div class="driver-card-number">87</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/gb.png" alt="GB" class="driver-flag"/><span class="driver-card-name">Oliver Bearman</span></div>
+            <div class="driver-card-team" style="color:var(--team-haas)">TGR Haas F1</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">17</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('haas')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,#555 0%,#1a1a1a 100%)">
+            <img src="images/ocon.jpg" alt="Ocon" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Esteban+Ocon&background=B6BABD&color=111&size=150&bold=true'"/>
+            <div class="driver-card-number">31</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="driver-flag"/><span class="driver-card-name">Esteban Ocon</span></div>
+            <div class="driver-card-team" style="color:var(--team-haas)">TGR Haas F1</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audi -->
+        <div class="driver-card" onclick="selectTeamTheme('sauber')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-sauber) 0%,#0a1a0a 100%)">
+            <img src="images/hulkenberg.jpg" alt="Hulkenberg" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Nico+Hulkenberg&background=52E252&color=111&size=150&bold=true'"/>
+            <div class="driver-card-number">27</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/de.png" alt="DE" class="driver-flag"/><span class="driver-card-name">Nico Hülkenberg</span></div>
+            <div class="driver-card-team" style="color:var(--team-sauber)">Audi F1 🆕</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('sauber')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-sauber) 0%,#0a1a0a 100%)">
+            <img src="images/bortoleto.jpg" alt="Bortoleto" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Gabriel+Bortoleto&background=52E252&color=111&size=150&bold=true'"/>
+            <div class="driver-card-number">5</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/br.png" alt="BR" class="driver-flag"/><span class="driver-card-name">Gabriel Bortoleto</span></div>
+            <div class="driver-card-team" style="color:var(--team-sauber)">Audi F1 🆕</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">2</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alpine -->
+        <div class="driver-card" onclick="selectTeamTheme('alpine')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-alpine) 0%,#001a2a 100%)">
+            <img src="images/gasly.jpg" alt="Gasly" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Pierre+Gasly&background=0093CC&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">10</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/fr.png" alt="FR" class="driver-flag"/><span class="driver-card-name">Pierre Gasly</span></div>
+            <div class="driver-card-team" style="color:var(--team-alpine)">Alpine</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">9</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('alpine')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,var(--team-alpine) 0%,#001a2a 100%)">
+            <img src="images/colapinto.jpg" alt="Colapinto" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Franco+Colapinto&background=0093CC&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">43</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/ar.png" alt="AR" class="driver-flag"/><span class="driver-card-name">Franco Colapinto</span></div>
+            <div class="driver-card-team" style="color:var(--team-alpine)">Alpine</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">1</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cadillac -->
+        <div class="driver-card" onclick="selectTeamTheme('default')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,#B40A29 0%,#1a0000 100%)">
+            <img src="images/bottas.jpg" alt="Bottas" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Valtteri+Bottas&background=B40A29&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">77</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/fi.png" alt="FI" class="driver-flag"/><span class="driver-card-name">Valtteri Bottas</span></div>
+            <div class="driver-card-team" style="color:#B40A29">Cadillac F1 🆕</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="driver-card" onclick="selectTeamTheme('default')">
+          <div class="driver-card-top" style="background:linear-gradient(135deg,#B40A29 0%,#1a0000 100%)">
+            <img src="images/perez.jpg" alt="Perez" class="driver-card-img" onerror="this.src='https://ui-avatars.com/api/?name=Sergio+Perez&background=B40A29&color=fff&size=150&bold=true'"/>
+            <div class="driver-card-number">11</div>
+          </div>
+          <div class="driver-card-info">
+            <div class="driver-card-flag-name"><img src="https://flagcdn.com/w40/mx.png" alt="MX" class="driver-flag"/><span class="driver-card-name">Sergio Pérez</span></div>
+            <div class="driver-card-team" style="color:#B40A29">Cadillac F1 🆕</div>
+            <div class="driver-card-stats">
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">PTS</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Wins</span></div>
+              <div class="dcs"><span class="dcs-val">0</span><span class="dcs-lbl">Pods</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">F1<span>STATS</span></div>
+      <p class="footer-copy">2026 season standings after Round 2 — Chinese GP. Not affiliated with Formula 1®.</p>
+      <div class="footer-links">
+        <a href="https://openf1.org/" target="_blank">OpenF1</a>
+        <a href="https://flagcdn.com" target="_blank">FlagCDN</a>
+        <a href="https://www.formula1.com" target="_blank">Formula1.com</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

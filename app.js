@@ -1,20 +1,7 @@
 /* ============================================================
    F1STATS — app.js
-   SPA routing, theming, countdown
+   Theming, countdown, mobile nav
    ============================================================ */
-
-// ── PAGE ROUTER ─────────────────────────────────────────────
-function showPage(id, linkEl) {
-  // Hide all pages
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + id).classList.add('active');
-
-  // Update nav links
-  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-  if (linkEl) linkEl.classList.add('active');
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
 // ── THEME TOGGLE ─────────────────────────────────────────────
 function toggleTheme() {
@@ -50,7 +37,8 @@ function selectTeamTheme(team) {
   const color = TEAM_COLORS[team] || TEAM_COLORS.default;
   document.documentElement.style.setProperty('--team-active', color);
   document.documentElement.style.setProperty('--accent', color);
-  document.querySelector('.team-bar').style.background = color;
+  const bar = document.querySelector('.team-bar');
+  if (bar) bar.style.background = color;
   localStorage.setItem('f1stats-team', team);
 }
 
@@ -67,11 +55,35 @@ function switchTab(panelId, btn) {
   btn.classList.add('active');
 }
 
+// ── MOBILE NAV ───────────────────────────────────────────────
+function toggleMobileNav() {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.querySelector('.hamburger');
+  if (!nav || !btn) return;
+  const isOpen = nav.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.setAttribute('aria-expanded', isOpen);
+}
+
+// Close mobile nav on outside click
+document.addEventListener('click', function (e) {
+  const nav = document.getElementById('mobile-nav');
+  const btn = document.querySelector('.hamburger');
+  if (!nav || !btn) return;
+  if (!nav.contains(e.target) && !btn.contains(e.target)) {
+    nav.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+  }
+});
+
 // ── COUNTDOWN ─────────────────────────────────────────────────
 function updateCountdown() {
-  const target = new Date('2025-05-25T13:00:00Z');
+  const target = new Date('2026-03-29T05:00:00Z'); // Japanese GP 2026
   const now = new Date();
   const diff = target - now;
+
+  const pad = n => String(n).padStart(2, '0');
 
   if (diff <= 0) {
     ['cd-days','cd-hrs','cd-min','cd-sec'].forEach(id => {
@@ -85,8 +97,6 @@ function updateCountdown() {
   const hrs  = Math.floor((diff % 86400000) / 3600000);
   const min  = Math.floor((diff % 3600000) / 60000);
   const sec  = Math.floor((diff % 60000) / 1000);
-
-  const pad = n => String(n).padStart(2, '0');
 
   const daysEl = document.getElementById('cd-days');
   const hrsEl  = document.getElementById('cd-hrs');
