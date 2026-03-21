@@ -109,8 +109,100 @@ function updateCountdown() {
   if (secEl)  secEl.textContent  = pad(sec);
 }
 
+// ── TRACK MODAL ───────────────────────────────────────────────
+// Maps each data-track key to its SVG file in the tracks/ folder.
+// Download files from:
+// ── TRACK MODAL ───────────────────────────────────────────────
+// Maps each data-track key to its SVG filename inside tracks/.
+// Only the RIGHT side (the filename string) ever needs editing —
+// match it exactly to whatever file you have saved in tracks/.
+const TRACK_SVG_MAP = {
+  australia:   'tracks/melbourne-1.svg',
+  china:       'tracks/shanghai-1.svg',
+  japan:       'tracks/suzuka-1.svg',
+  miami:       'tracks/miami-1.svg',
+  canada:      'tracks/montreal-2.svg',
+  monaco:      'tracks/monaco-4.svg',
+  spain:       'tracks/catalunya-3.svg',
+  austria:     'tracks/spielberg-2.svg',
+  silverstone: 'tracks/silverstone-7.svg',
+  belgium:     'tracks/spa-francorchamps-3.svg',
+  hungary:     'tracks/hungaroring-2.svg',
+  zandvoort:   'tracks/zandvoort-3.svg',
+  monza:       'tracks/monza-5.svg',
+  madrid:      'tracks/madring-1.svg',
+  baku:        'tracks/baku-1.svg',
+  singapore:   'tracks/marina-bay-2.svg',
+  cota:        'tracks/austin-1.svg',
+  mexico:      'tracks/mexico-city-3.svg',
+  brazil:      'tracks/interlagos-2.svg',
+  lasvegas:    'tracks/las-vegas-1.svg',
+  qatar:       'tracks/lusail-1.svg',
+  abudhabi:    'tracks/yas-marina-2.svg',
+};
+
+/**
+ * loadTrackSVG(track)
+ *
+ * Uses an <img> tag to display the SVG file.
+ * This works with file:// (double-click open) AND http:// servers
+ * because browsers load <img src> without any CORS/fetch restriction.
+ *
+ * The accent colour is applied via a CSS filter approximation and
+ * a matching glow behind the image.
+ */
+function loadTrackSVG(track) {
+  var wrap = document.getElementById('tm-track-svg');
+  var glow = document.querySelector('.tm-track-glow');
+  if (!wrap) return;
+
+  var key    = Object.keys(TRACKS || {}).find(function(k){ return TRACKS[k] === track; }) || '';
+  var src    = TRACK_SVG_MAP[key] || null;
+  var accent = track.accentColor || '#e10600';
+
+  // Update ambient glow colour
+  if (glow) {
+    glow.style.background =
+      'radial-gradient(ellipse at 50% 50%, ' + accent + '20 0%, transparent 65%)';
+  }
+
+  if (!src) {
+    wrap.innerHTML = '<p class="tm-track-fallback">No layout mapped for this circuit.</p>';
+    return;
+  }
+
+  // Build an <img> that points directly at the SVG file.
+  // Works on file://, no fetch() needed.
+  var img = document.createElement('img');
+  img.className   = 'tm-track-img';
+  img.alt         = track.name + ' circuit layout';
+  img.draggable   = false;
+
+  img.onerror = function() {
+    wrap.innerHTML =
+      '<p class="tm-track-fallback">Layout unavailable — check the filename in TRACK_SVG_MAP matches the file in your tracks/ folder.</p>';
+  };
+
+  // Clear previous content and show the image
+  wrap.innerHTML = '';
+  wrap.appendChild(img);
+
+  // Set src AFTER appending so onerror fires reliably in all browsers
+  img.src = src;
+}
+
+// Delegated listener — intercepts clicks on .cal-card[data-track]
+document.addEventListener('click', function(e) {
+  var card = e.target.closest('.cal-card[data-track]');
+  if (!card) return;
+  var trackKey = card.getAttribute('data-track');
+  var box = document.querySelector('.tm-box');
+  if (box) box.setAttribute('data-open-track', trackKey);
+  if (typeof openTrackModal === 'function') openTrackModal(trackKey);
+});
+
 // ── INIT ──────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   applyStoredTheme();
   applyStoredTeam();
   updateCountdown();

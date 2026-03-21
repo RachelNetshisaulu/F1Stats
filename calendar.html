@@ -23,7 +23,7 @@
       </nav>
       <div class="nav-actions">
         <button class="theme-toggle" onclick="toggleTheme()"><span class="theme-icon">☀</span></button>
-        <button class="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+        <button class="hamburger" onclick="toggleMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
       </div>
     </div>
     <nav class="mobile-nav" id="mobile-nav">
@@ -39,12 +39,13 @@
   <main>
     <section class="page-hero">
       <h1 class="page-title">Race Calendar</h1>
-      <p class="page-sub">2026 Formula 1 Season — 22 Rounds · New regulations era</p>
+      <p class="page-sub">2026 Formula 1 Season — 22 Rounds · New regulations era · Click any race for track details</p>
     </section>
+
     <div class="calendar-grid">
 
-      <!-- DONE -->
-      <div class="cal-card done">
+      <!-- R01 — DONE -->
+      <div class="cal-card done" data-track="australia">
         <div class="cal-round">R01</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/au.png" alt="AU" class="cal-flag"/> Australia</div>
         <div class="cal-name">Australian Grand Prix</div>
@@ -52,7 +53,8 @@
         <div class="cal-winner">🏆 Russell</div>
       </div>
 
-      <div class="cal-card done">
+      <!-- R02 — DONE -->
+      <div class="cal-card done" data-track="china">
         <div class="cal-round">R02</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/cn.png" alt="CN" class="cal-flag"/> China 🔥 Sprint</div>
         <div class="cal-name">Chinese Grand Prix</div>
@@ -60,8 +62,8 @@
         <div class="cal-winner">🏆 Antonelli</div>
       </div>
 
-      <!-- NEXT -->
-      <div class="cal-card next">
+      <!-- R03 — NEXT -->
+      <div class="cal-card next" data-track="japan">
         <div class="cal-round">R03</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/jp.png" alt="JP" class="cal-flag"/> Japan</div>
         <div class="cal-name">Japanese Grand Prix</div>
@@ -69,150 +71,170 @@
         <div class="cal-upcoming-badge">NEXT RACE</div>
       </div>
 
-      <!-- CANCELLED -->
-      <div class="cal-card" style="opacity:0.4;border-color:#ff4444;position:relative">
+      <!-- R04 — CANCELLED -->
+      <div class="cal-card cal-cancelled">
         <div class="cal-round">R04</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/bh.png" alt="BH" class="cal-flag"/> Bahrain</div>
         <div class="cal-name">Bahrain Grand Prix</div>
         <div class="cal-date">April 10–12, 2026</div>
-        <div class="cal-upcoming-badge" style="background:#ff4444">CANCELLED</div>
+        <div class="cal-upcoming-badge cal-badge-cancelled">CANCELLED</div>
       </div>
 
-      <div class="cal-card" style="opacity:0.4;border-color:#ff4444;position:relative">
+      <!-- R05 — CANCELLED -->
+      <div class="cal-card cal-cancelled">
         <div class="cal-round">R05</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/sa.png" alt="SA" class="cal-flag"/> Saudi Arabia</div>
         <div class="cal-name">Saudi Arabian GP</div>
         <div class="cal-date">April 17–19, 2026</div>
-        <div class="cal-upcoming-badge" style="background:#ff4444">CANCELLED</div>
+        <div class="cal-upcoming-badge cal-badge-cancelled">CANCELLED</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R06 -->
+      <div class="cal-card" data-track="miami">
         <div class="cal-round">R06</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/us.png" alt="US" class="cal-flag"/> USA (Miami) 🔥 Sprint</div>
         <div class="cal-name">Miami Grand Prix</div>
         <div class="cal-date">May 1–3, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R07 -->
+      <div class="cal-card" data-track="canada">
         <div class="cal-round">R07</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/ca.png" alt="CA" class="cal-flag"/> Canada 🔥 Sprint</div>
         <div class="cal-name">Canadian Grand Prix</div>
         <div class="cal-date">May 22–24, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R08 -->
+      <div class="cal-card" data-track="monaco">
         <div class="cal-round">R08</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/mc.png" alt="MC" class="cal-flag"/> Monaco</div>
         <div class="cal-name">Monaco Grand Prix</div>
         <div class="cal-date">June 5–7, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R09 -->
+      <div class="cal-card" data-track="spain">
         <div class="cal-round">R09</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="cal-flag"/> Spain (Barcelona)</div>
         <div class="cal-name">Barcelona-Catalunya GP</div>
         <div class="cal-date">June 12–14, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R10 -->
+      <div class="cal-card" data-track="austria">
         <div class="cal-round">R10</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/at.png" alt="AT" class="cal-flag"/> Austria</div>
         <div class="cal-name">Austrian Grand Prix</div>
         <div class="cal-date">June 26–28, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R11 -->
+      <div class="cal-card" data-track="silverstone">
         <div class="cal-round">R11</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/gb.png" alt="GB" class="cal-flag"/> Great Britain 🔥 Sprint</div>
         <div class="cal-name">British Grand Prix</div>
         <div class="cal-date">July 3–5, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R12 -->
+      <div class="cal-card" data-track="belgium">
         <div class="cal-round">R12</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/be.png" alt="BE" class="cal-flag"/> Belgium</div>
         <div class="cal-name">Belgian Grand Prix</div>
         <div class="cal-date">July 17–19, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R13 -->
+      <div class="cal-card" data-track="hungary">
         <div class="cal-round">R13</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/hu.png" alt="HU" class="cal-flag"/> Hungary</div>
         <div class="cal-name">Hungarian Grand Prix</div>
         <div class="cal-date">July 24–26, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R14 -->
+      <div class="cal-card" data-track="zandvoort">
         <div class="cal-round">R14</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/nl.png" alt="NL" class="cal-flag"/> Netherlands 🔥 Sprint</div>
         <div class="cal-name">Dutch Grand Prix</div>
         <div class="cal-date">August 21–23, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R15 -->
+      <div class="cal-card" data-track="monza">
         <div class="cal-round">R15</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/it.png" alt="IT" class="cal-flag"/> Italy (Monza)</div>
         <div class="cal-name">Italian Grand Prix</div>
         <div class="cal-date">September 4–6, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R16 — NEW VENUE -->
+      <div class="cal-card" data-track="madrid">
         <div class="cal-round">R16</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/es.png" alt="ES" class="cal-flag"/> Spain (Madrid) 🆕</div>
         <div class="cal-name">Madrid Grand Prix</div>
         <div class="cal-date">September 11–13, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R17 -->
+      <div class="cal-card" data-track="baku">
         <div class="cal-round">R17</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/az.png" alt="AZ" class="cal-flag"/> Azerbaijan</div>
         <div class="cal-name">Azerbaijan Grand Prix</div>
         <div class="cal-date">September 25–27, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R18 -->
+      <div class="cal-card" data-track="singapore">
         <div class="cal-round">R18</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/sg.png" alt="SG" class="cal-flag"/> Singapore 🔥 Sprint</div>
         <div class="cal-name">Singapore Grand Prix</div>
         <div class="cal-date">October 2–4, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R19 -->
+      <div class="cal-card" data-track="cota">
         <div class="cal-round">R19</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/us.png" alt="US" class="cal-flag"/> USA (Austin)</div>
         <div class="cal-name">United States GP</div>
         <div class="cal-date">October 16–18, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R20 -->
+      <div class="cal-card" data-track="mexico">
         <div class="cal-round">R20</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/mx.png" alt="MX" class="cal-flag"/> Mexico</div>
         <div class="cal-name">Mexico City GP</div>
         <div class="cal-date">October 30 – Nov 1, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R21 -->
+      <div class="cal-card" data-track="brazil">
         <div class="cal-round">R21</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/br.png" alt="BR" class="cal-flag"/> Brazil</div>
         <div class="cal-name">São Paulo Grand Prix</div>
         <div class="cal-date">November 13–15, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R22 -->
+      <div class="cal-card" data-track="lasvegas">
         <div class="cal-round">R22</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/us.png" alt="US" class="cal-flag"/> USA (Las Vegas)</div>
         <div class="cal-name">Las Vegas Grand Prix</div>
         <div class="cal-date">November 19–21, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R23 -->
+      <div class="cal-card" data-track="qatar">
         <div class="cal-round">R23</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/qa.png" alt="QA" class="cal-flag"/> Qatar</div>
         <div class="cal-name">Qatar Grand Prix</div>
         <div class="cal-date">November 27–29, 2026</div>
       </div>
 
-      <div class="cal-card">
+      <!-- R24 -->
+      <div class="cal-card" data-track="abudhabi">
         <div class="cal-round">R24</div>
         <div class="cal-country"><img src="https://flagcdn.com/w40/ae.png" alt="AE" class="cal-flag"/> Abu Dhabi</div>
         <div class="cal-name">Abu Dhabi Grand Prix</div>
@@ -233,6 +255,35 @@
       </div>
     </div>
   </footer>
+
+  <!-- ── TRACK MODAL ──────────────────────────────────────── -->
+  <div id="track-modal" class="tm-overlay" role="dialog" aria-modal="true" aria-labelledby="tm-title">
+    <div class="tm-box">
+      <button class="tm-close" id="tm-close-btn" aria-label="Close">&times;</button>
+      <div class="tm-header">
+        <div class="tm-flag-wrap">
+          <img id="tm-flag" src="" alt="" class="tm-flag" />
+        </div>
+        <div class="tm-meta">
+          <p class="tm-round-label" id="tm-round"></p>
+          <h2 class="tm-title" id="tm-title"></h2>
+          <p class="tm-location" id="tm-location"></p>
+          <div class="tm-stats">
+            <div class="tm-stat"><span class="tm-stat-val" id="tm-laps"></span><span class="tm-stat-lbl">Laps</span></div>
+            <div class="tm-stat"><span class="tm-stat-val" id="tm-length"></span><span class="tm-stat-lbl">Circuit km</span></div>
+            <div class="tm-stat"><span class="tm-stat-val" id="tm-lap-record-time"></span><span class="tm-stat-lbl">Lap Record</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tm-track-wrap">
+        <div class="tm-track-glow"></div>
+        <div id="tm-track-svg" class="tm-track-svg"></div>
+        <p class="tm-lap-record-holder" id="tm-record-holder"></p>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
+  <script src="track-modal.js"></script>
 </body>
 </html>
