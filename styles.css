@@ -14,8 +14,8 @@
   --team-aston:     #229971;
   --team-williams:  #64C4FF;
   --team-haas:      #B6BABD;
-  --team-sauber:    #52E252;
-  --team-rb:        #6692FF;
+  --team-sauber:    #9B9B9B;   /* Audi — silver/grey */
+  --team-rb:        #4169C8;   /* Racing Bulls — distinct mid-blue */
 
   /* Dark theme (default) */
   --bg:        #0d0d0d;
@@ -470,12 +470,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 .driver-thumb {
-  width: 36px; height: 36px;
+  width: 32px; height: 32px;
   border-radius: 50%;
   object-fit: cover;
   background: var(--surface);
+  flex-shrink: 0;
 }
 .driver-name {
   display: block;
@@ -626,11 +628,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .drivers-grid-section {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 24px 56px;
+  padding: 0 24px 20px;
 }
+.drivers-grid-section.last { padding-bottom: 56px; }
 .drivers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
 .driver-card {
@@ -806,10 +809,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-bottom: 1px solid var(--border);
 }
 .fst-row td {
-  padding: 14px 20px;
+  padding: 12px 20px;
   border-bottom: 1px solid var(--border);
   font-size: 0.9rem;
   vertical-align: middle;
+  white-space: nowrap;
+}
+.fst-row td:nth-child(2) {
+  white-space: nowrap;
+  min-width: 160px;
 }
 .fst-row.p1 td { background: rgba(225,6,0,0.05); }
 .fst-row:hover td { background: var(--bg-hover); }

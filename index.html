@@ -9,6 +9,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── CONSTRUCTOR CHART ───────────────────────────── */
+    .chart-section {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px 56px;
+    }
+    .chart-section .section-header { padding: 0 0 20px; }
+    .constructor-chart { display: flex; flex-direction: column; gap: 10px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: 110px 1fr 52px;
+      align-items: center;
+      gap: 12px;
+    }
+    .chart-team-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+      text-align: right;
+      color: var(--text-sec);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .chart-bar-track {
+      background: var(--surface);
+      border-radius: 4px;
+      height: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+    .chart-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      min-width: 28px;
+    }
+    .chart-bar-pos {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1px;
+    }
+    .chart-pts {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      text-align: left;
+      color: var(--text);
+    }
+  </style>
 </head>
 <body>
 
@@ -77,7 +134,9 @@
       <div class="stat-item"><span class="stat-value">2</span><span class="stat-label">Races Complete</span></div>
     </section>
 
+    <!-- Driver standings (top 10) + Last Race -->
     <section class="home-grid">
+
       <div class="home-panel">
         <div class="panel-header">
           <h2 class="panel-title">Driver Standings</h2>
@@ -89,9 +148,7 @@
             <tr class="standing-row p1">
               <td class="pos-cell"><span class="pos">1</span></td>
               <td class="driver-cell">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/George_Russell_2022_Bahrain_GP.jpg/120px-George_Russell_2022_Bahrain_GP.jpg"
-                     alt="Russell" class="driver-thumb"
-                     onerror="this.src='https://ui-avatars.com/api/?name=GR&background=00D2BE&color=fff&size=40&bold=true&rounded=true'"/>
+                <img src="images/imgi_60_2026mercedesgeorus01right.png" alt="RUS" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=GR&background=00D2BE&color=fff&size=32&bold=true&rounded=true'"/>
                 <div><span class="driver-name">George Russell</span><span class="driver-abbr">RUS</span></div>
               </td>
               <td><span class="team-dot" style="background:var(--team-mercedes)"></span>Mercedes</td>
@@ -100,9 +157,7 @@
             <tr class="standing-row">
               <td class="pos-cell"><span class="pos">2</span></td>
               <td class="driver-cell">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Kimi_Antonelli_2024_Formula_2_Monza.jpg/120px-Kimi_Antonelli_2024_Formula_2_Monza.jpg"
-                     alt="Antonelli" class="driver-thumb"
-                     onerror="this.src='https://ui-avatars.com/api/?name=KA&background=00D2BE&color=fff&size=40&bold=true&rounded=true'"/>
+                <img src="images/imgi_61_2026mercedesandant01right.png" alt="ANT" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=KA&background=00D2BE&color=fff&size=32&bold=true&rounded=true'"/>
                 <div><span class="driver-name">Kimi Antonelli</span><span class="driver-abbr">ANT</span></div>
               </td>
               <td><span class="team-dot" style="background:var(--team-mercedes)"></span>Mercedes</td>
@@ -111,9 +166,7 @@
             <tr class="standing-row">
               <td class="pos-cell"><span class="pos">3</span></td>
               <td class="driver-cell">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Charles_Leclerc_2022_Bahrain_GP.jpg/120px-Charles_Leclerc_2022_Bahrain_GP.jpg"
-                     alt="Leclerc" class="driver-thumb"
-                     onerror="this.src='https://ui-avatars.com/api/?name=CL&background=E8002D&color=fff&size=40&bold=true&rounded=true'"/>
+                <img src="images/imgi_62_2026ferrarichalec01right.png" alt="LEC" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=CL&background=E8002D&color=fff&size=32&bold=true&rounded=true'"/>
                 <div><span class="driver-name">Charles Leclerc</span><span class="driver-abbr">LEC</span></div>
               </td>
               <td><span class="team-dot" style="background:var(--team-ferrari)"></span>Ferrari</td>
@@ -122,9 +175,7 @@
             <tr class="standing-row">
               <td class="pos-cell"><span class="pos">4</span></td>
               <td class="driver-cell">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/120px-Lewis_Hamilton_2016_Malaysia_2.jpg"
-                     alt="Hamilton" class="driver-thumb"
-                     onerror="this.src='https://ui-avatars.com/api/?name=LH&background=E8002D&color=fff&size=40&bold=true&rounded=true'"/>
+                <img src="images/hamilton.jpg" alt="HAM" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=LH&background=E8002D&color=fff&size=32&bold=true&rounded=true'"/>
                 <div><span class="driver-name">Lewis Hamilton</span><span class="driver-abbr">HAM</span></div>
               </td>
               <td><span class="team-dot" style="background:var(--team-ferrari)"></span>Ferrari</td>
@@ -133,13 +184,56 @@
             <tr class="standing-row">
               <td class="pos-cell"><span class="pos">5</span></td>
               <td class="driver-cell">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Oliver_Bearman_2024_British_GP.jpg/120px-Oliver_Bearman_2024_British_GP.jpg"
-                     alt="Bearman" class="driver-thumb"
-                     onerror="this.src='https://ui-avatars.com/api/?name=OB&background=B6BABD&color=111&size=40&bold=true&rounded=true'"/>
+                <img src="images/bearman.jpg" alt="BEA" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=OB&background=B6BABD&color=111&size=32&bold=true&rounded=true'"/>
                 <div><span class="driver-name">Oliver Bearman</span><span class="driver-abbr">BEA</span></div>
               </td>
               <td><span class="team-dot" style="background:var(--team-haas)"></span>Haas</td>
               <td class="pts-col"><strong>17</strong></td>
+            </tr>
+            <tr class="standing-row">
+              <td class="pos-cell"><span class="pos">6</span></td>
+              <td class="driver-cell">
+                <img src="images/norris.jpg" alt="NOR" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=LN&background=FF8000&color=fff&size=32&bold=true&rounded=true'"/>
+                <div><span class="driver-name">Lando Norris</span><span class="driver-abbr">NOR</span></div>
+              </td>
+              <td><span class="team-dot" style="background:var(--team-mclaren)"></span>McLaren</td>
+              <td class="pts-col"><strong>15</strong></td>
+            </tr>
+            <tr class="standing-row">
+              <td class="pos-cell"><span class="pos">7</span></td>
+              <td class="driver-cell">
+                <img src="images/gasly.jpg" alt="GAS" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=PG&background=0093CC&color=fff&size=32&bold=true&rounded=true'"/>
+                <div><span class="driver-name">Pierre Gasly</span><span class="driver-abbr">GAS</span></div>
+              </td>
+              <td><span class="team-dot" style="background:var(--team-alpine)"></span>Alpine</td>
+              <td class="pts-col"><strong>9</strong></td>
+            </tr>
+            <tr class="standing-row">
+              <td class="pos-cell"><span class="pos">8</span></td>
+              <td class="driver-cell">
+                <img src="images/verstappen.jpg" alt="VER" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=MV&background=3671C6&color=fff&size=32&bold=true&rounded=true'"/>
+                <div><span class="driver-name">Max Verstappen</span><span class="driver-abbr">VER</span></div>
+              </td>
+              <td><span class="team-dot" style="background:var(--team-redbull)"></span>Red Bull</td>
+              <td class="pts-col"><strong>8</strong></td>
+            </tr>
+            <tr class="standing-row">
+              <td class="pos-cell"><span class="pos">9</span></td>
+              <td class="driver-cell">
+                <img src="images/lawson.jpg" alt="LAW" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=LL&background=4169C8&color=fff&size=32&bold=true&rounded=true'"/>
+                <div><span class="driver-name">Liam Lawson</span><span class="driver-abbr">LAW</span></div>
+              </td>
+              <td><span class="team-dot" style="background:var(--team-rb)"></span>Racing Bulls</td>
+              <td class="pts-col"><strong>8</strong></td>
+            </tr>
+            <tr class="standing-row">
+              <td class="pos-cell"><span class="pos">10</span></td>
+              <td class="driver-cell">
+                <img src="images/lindblad.jpg" alt="LIN" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=AL&background=4169C8&color=fff&size=32&bold=true&rounded=true'"/>
+                <div><span class="driver-name">Arvid Lindblad</span><span class="driver-abbr">LIN</span></div>
+              </td>
+              <td><span class="team-dot" style="background:var(--team-rb)"></span>Racing Bulls</td>
+              <td class="pts-col"><strong>4</strong></td>
             </tr>
           </tbody>
         </table>
@@ -153,29 +247,23 @@
         <div class="last-race-podium">
           <div class="podium-slot p2">
             <div class="podium-driver-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/George_Russell_2022_Bahrain_GP.jpg/120px-George_Russell_2022_Bahrain_GP.jpg"
-                   alt="RUS" class="podium-driver-img"
-                   onerror="this.src='https://ui-avatars.com/api/?name=GR&background=00D2BE&color=fff&size=64&bold=true&rounded=true'" />
+              <img src="images/russell.jpg" alt="RUS" class="podium-driver-img" onerror="this.src='https://ui-avatars.com/api/?name=GR&background=00D2BE&color=fff&size=64&bold=true&rounded=true'" />
             </div>
-            <div class="podium-bar" style="height:80px; background:var(--team-mercedes)"></div>
+            <div class="podium-bar" style="height:80px;background:var(--team-mercedes)"></div>
             <div class="podium-label">2nd<br/><span>Russell</span></div>
           </div>
           <div class="podium-slot p1">
             <div class="podium-driver-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Kimi_Antonelli_2024_Formula_2_Monza.jpg/120px-Kimi_Antonelli_2024_Formula_2_Monza.jpg"
-                   alt="ANT" class="podium-driver-img"
-                   onerror="this.src='https://ui-avatars.com/api/?name=KA&background=00D2BE&color=fff&size=64&bold=true&rounded=true'" />
+              <img src="images/antonelli.jpg" alt="ANT" class="podium-driver-img" onerror="this.src='https://ui-avatars.com/api/?name=KA&background=00D2BE&color=fff&size=64&bold=true&rounded=true'" />
             </div>
-            <div class="podium-bar" style="height:110px; background:var(--team-mercedes)"></div>
+            <div class="podium-bar" style="height:110px;background:var(--team-mercedes)"></div>
             <div class="podium-label">1st 🏆<br/><span>Antonelli</span></div>
           </div>
           <div class="podium-slot p3">
             <div class="podium-driver-img-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/120px-Lewis_Hamilton_2016_Malaysia_2.jpg"
-                   alt="HAM" class="podium-driver-img"
-                   onerror="this.src='https://ui-avatars.com/api/?name=LH&background=E8002D&color=fff&size=64&bold=true&rounded=true'" />
+              <img src="images/hamilton.jpg" alt="HAM" class="podium-driver-img" onerror="this.src='https://ui-avatars.com/api/?name=LH&background=E8002D&color=fff&size=64&bold=true&rounded=true'" />
             </div>
-            <div class="podium-bar" style="height:55px; background:var(--team-ferrari)"></div>
+            <div class="podium-bar" style="height:55px;background:var(--team-ferrari)"></div>
             <div class="podium-label">3rd<br/><span>Hamilton</span></div>
           </div>
         </div>
@@ -188,36 +276,124 @@
       </div>
     </section>
 
-    <section class="tyre-section">
+    <!-- Constructor bar chart -->
+    <section class="chart-section">
       <div class="section-header">
         <h2 class="section-title">Constructor Standings</h2>
         <span class="section-sub">After Round 2 — China</span>
       </div>
-      <div class="tyre-grid">
-        <div class="tyre-card">
-          <span class="tyre-compound" style="background:var(--team-mercedes);color:#111;font-size:0.85rem">1st</span>
-          <div class="tyre-info"><span class="tyre-driver">Mercedes</span><span class="tyre-laps">98 pts</span></div>
+      <div class="constructor-chart">
+
+        <div class="chart-row">
+          <span class="chart-team-name">Mercedes</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:100%;background:var(--team-mercedes)">
+              <span class="chart-bar-pos">P1</span>
+            </div>
+          </div>
+          <span class="chart-pts">98</span>
         </div>
-        <div class="tyre-card">
-          <span class="tyre-compound" style="background:var(--team-ferrari);color:#fff;font-size:0.85rem">2nd</span>
-          <div class="tyre-info"><span class="tyre-driver">Ferrari</span><span class="tyre-laps">67 pts</span></div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">Ferrari</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:68%;background:var(--team-ferrari)">
+              <span class="chart-bar-pos">P2</span>
+            </div>
+          </div>
+          <span class="chart-pts">67</span>
         </div>
-        <div class="tyre-card">
-          <span class="tyre-compound" style="background:var(--team-mclaren);color:#fff;font-size:0.85rem">3rd</span>
-          <div class="tyre-info"><span class="tyre-driver">McLaren</span><span class="tyre-laps">18 pts</span></div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">McLaren</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:18%;background:var(--team-mclaren)">
+              <span class="chart-bar-pos">P3</span>
+            </div>
+          </div>
+          <span class="chart-pts">18</span>
         </div>
-        <div class="tyre-card">
-          <span class="tyre-compound" style="background:var(--team-haas);color:#111;font-size:0.85rem">4th</span>
-          <div class="tyre-info"><span class="tyre-driver">TGR Haas</span><span class="tyre-laps">17 pts</span></div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">TGR Haas</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:17%;background:var(--team-haas)">
+              <span class="chart-bar-pos" style="color:#111">P4</span>
+            </div>
+          </div>
+          <span class="chart-pts">17</span>
         </div>
-        <div class="tyre-card">
-          <span class="tyre-compound" style="background:var(--team-redbull);color:#fff;font-size:0.85rem">5th</span>
-          <div class="tyre-info"><span class="tyre-driver">Red Bull</span><span class="tyre-laps">12 pts</span></div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">Red Bull</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:12%;background:var(--team-redbull)">
+              <span class="chart-bar-pos">P5</span>
+            </div>
+          </div>
+          <span class="chart-pts">12</span>
         </div>
-        <div class="tyre-card">
-          <span class="tyre-compound" style="background:var(--team-alpine);color:#fff;font-size:0.85rem">7th</span>
-          <div class="tyre-info"><span class="tyre-driver">Alpine</span><span class="tyre-laps">10 pts</span></div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">Racing Bulls</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:12%;background:var(--team-rb)">
+              <span class="chart-bar-pos">P6</span>
+            </div>
+          </div>
+          <span class="chart-pts">12</span>
         </div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">Alpine</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:10%;background:var(--team-alpine)">
+              <span class="chart-bar-pos">P7</span>
+            </div>
+          </div>
+          <span class="chart-pts">10</span>
+        </div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">Audi</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:2%;background:var(--team-sauber)">
+              <span class="chart-bar-pos" style="color:#111">P8</span>
+            </div>
+          </div>
+          <span class="chart-pts">2</span>
+        </div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">Williams</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:2%;background:var(--team-williams)">
+              <span class="chart-bar-pos" style="color:#111">P9</span>
+            </div>
+          </div>
+          <span class="chart-pts">2</span>
+        </div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">Cadillac</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:1%;background:#B40A29;min-width:28px">
+              <span class="chart-bar-pos">P10</span>
+            </div>
+          </div>
+          <span class="chart-pts">0</span>
+        </div>
+
+        <div class="chart-row">
+          <span class="chart-team-name">Aston Martin</span>
+          <div class="chart-bar-track">
+            <div class="chart-bar-fill" style="width:1%;background:var(--team-aston);min-width:28px">
+              <span class="chart-bar-pos">P11</span>
+            </div>
+          </div>
+          <span class="chart-pts">0</span>
+        </div>
+
       </div>
     </section>
 
@@ -237,7 +413,6 @@
 
   <script src="app.js"></script>
   <script>
-    // Override countdown to Japanese GP
     const NEXT_RACE = new Date('2026-03-29T05:00:00Z');
     function updateCountdown() {
       const diff = NEXT_RACE - new Date();

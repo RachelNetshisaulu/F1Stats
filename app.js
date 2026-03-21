@@ -28,8 +28,8 @@ const TEAM_COLORS = {
   aston:    '#229971',
   williams: '#64C4FF',
   haas:     '#B6BABD',
-  sauber:   '#52E252',
-  rb:       '#6692FF',
+  sauber:   '#9B9B9B',   /* Audi */
+  rb:       '#4169C8',   /* Racing Bulls */
   default:  '#e10600',
 };
 
