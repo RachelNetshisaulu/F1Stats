@@ -44,190 +44,322 @@
     <div class="teams-list">
 
       <!-- 1st: Mercedes -->
-      <div class="team-row" onclick="selectTeamTheme('mercedes')">
-        <div class="team-color-bar" style="background:var(--team-mercedes)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-mercedes);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">AMG</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('mercedes')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-mercedes)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-mercedes);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">AMG</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Mercedes-AMG</div>
+            <div class="team-row-drivers">Russell · Antonelli</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">98</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">1st</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:100%;background:var(--team-mercedes)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Toto Wolff</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>James Allison</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@MercedesAMGF1</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>Silver Arrows</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Mercedes-AMG</div>
-          <div class="team-row-drivers">Russell · Antonelli</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">98</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">1st</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:100%;background:var(--team-mercedes)"></div></div>
       </div>
 
       <!-- 2nd: Ferrari -->
-      <div class="team-row" onclick="selectTeamTheme('ferrari')">
-        <div class="team-color-bar" style="background:var(--team-ferrari)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-ferrari);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">SF</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('ferrari')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-ferrari)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-ferrari);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">SF</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Scuderia Ferrari</div>
+            <div class="team-row-drivers">Leclerc · Hamilton</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">67</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">2nd</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:68%;background:var(--team-ferrari)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Frédéric Vasseur</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>Enrico Cardile</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@ScuderiaFerrari</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>Prancing Horse</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Scuderia Ferrari</div>
-          <div class="team-row-drivers">Leclerc · Hamilton</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">67</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">2nd</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:68%;background:var(--team-ferrari)"></div></div>
       </div>
 
       <!-- 3rd: McLaren -->
-      <div class="team-row" onclick="selectTeamTheme('mclaren')">
-        <div class="team-color-bar" style="background:var(--team-mclaren)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-mclaren);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">MCL</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('mclaren')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-mclaren)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-mclaren);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">MCL</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">McLaren</div>
+            <div class="team-row-drivers">Norris · Piastri</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">18</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">3rd</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:18%;background:var(--team-mclaren)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Andrea Stella</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>Peter Prodromou</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@McLarenF1</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>Papaya</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">McLaren</div>
-          <div class="team-row-drivers">Norris · Piastri</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">18</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">3rd</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:18%;background:var(--team-mclaren)"></div></div>
       </div>
 
       <!-- 4th: TGR Haas -->
-      <div class="team-row" onclick="selectTeamTheme('haas')">
-        <div class="team-color-bar" style="background:var(--team-haas)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-haas);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">HAS</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('haas')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-haas)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-haas);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">HAS</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">TGR Haas F1</div>
+            <div class="team-row-drivers">Bearman · Ocon</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">17</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">4th</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:17%;background:var(--team-haas)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Ayao Komatsu</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>Andrea De Zordo</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@HaasF1Team</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>The American Team</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">TGR Haas F1</div>
-          <div class="team-row-drivers">Bearman · Ocon</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">17</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">4th</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:17%;background:var(--team-haas)"></div></div>
       </div>
 
       <!-- 5th: Red Bull -->
-      <div class="team-row" onclick="selectTeamTheme('redbull')">
-        <div class="team-color-bar" style="background:var(--team-redbull)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-redbull);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">RBR</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('redbull')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-redbull)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-redbull);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">RBR</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Red Bull Racing</div>
+            <div class="team-row-drivers">Verstappen · Hadjar</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">12</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">5th</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:12%;background:var(--team-redbull)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Christian Horner</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>Pierre Waché</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@redbullracing</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>The Bulls</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Red Bull Racing</div>
-          <div class="team-row-drivers">Verstappen · Hadjar</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">12</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">5th</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:12%;background:var(--team-redbull)"></div></div>
       </div>
 
       <!-- 6th: Racing Bulls -->
-      <div class="team-row" onclick="selectTeamTheme('rb')">
-        <div class="team-color-bar" style="background:var(--team-rb)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-rb);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">RB</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('rb')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-rb)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-rb);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">RB</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Racing Bulls</div>
+            <div class="team-row-drivers">Lawson · Lindblad</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">12</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">6th</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:12%;background:var(--team-rb)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Laurent Mekies</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>Jody Egginton</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@visacashapprb</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>VCARB</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Racing Bulls</div>
-          <div class="team-row-drivers">Lawson · Lindblad</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">12</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">6th</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:12%;background:var(--team-rb)"></div></div>
       </div>
 
       <!-- 7th: Alpine -->
-      <div class="team-row" onclick="selectTeamTheme('alpine')">
-        <div class="team-color-bar" style="background:var(--team-alpine)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-alpine);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">ALP</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('alpine')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-alpine)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-alpine);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">ALP</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Alpine</div>
+            <div class="team-row-drivers">Gasly · Colapinto</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">10</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">7th</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:10%;background:var(--team-alpine)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Oliver Oakes</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>David Sanchez</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@AlpineF1Team</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>Les Bleus</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Alpine</div>
-          <div class="team-row-drivers">Gasly · Colapinto</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">10</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">7th</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:10%;background:var(--team-alpine)"></div></div>
       </div>
 
       <!-- 8th: Audi — NEW TEAM -->
-      <div class="team-row" onclick="selectTeamTheme('sauber')">
-        <div class="team-color-bar" style="background:var(--team-sauber)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-sauber);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">ADI</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('sauber')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-sauber)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-sauber);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">ADI</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Audi F1 Team 🆕</div>
+            <div class="team-row-drivers">Hülkenberg · Bortoleto</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">2</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">8th</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:2%;background:var(--team-sauber)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Mattia Binotto</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>James Key</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@AudiOfficial</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>Four Rings</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Audi F1 Team 🆕</div>
-          <div class="team-row-drivers">Hülkenberg · Bortoleto</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">2</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">8th</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:2%;background:var(--team-sauber)"></div></div>
       </div>
 
       <!-- 9th: Williams -->
-      <div class="team-row" onclick="selectTeamTheme('williams')">
-        <div class="team-color-bar" style="background:var(--team-williams)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-williams);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">WIL</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('williams')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-williams)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-williams);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#111;font-size:0.7rem;letter-spacing:1px">WIL</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Williams Racing</div>
+            <div class="team-row-drivers">Albon · Sainz</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">2</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">9th</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:2%;background:var(--team-williams)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>James Vowles</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>Pat Fry</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@WilliamsRacing</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>The Grove Squad</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Williams Racing</div>
-          <div class="team-row-drivers">Albon · Sainz</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">2</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">9th</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:2%;background:var(--team-williams)"></div></div>
       </div>
 
       <!-- 10th: Cadillac — NEW TEAM -->
-      <div class="team-row" onclick="selectTeamTheme('default')">
-        <div class="team-color-bar" style="background:#B40A29"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:#B40A29;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">CAD</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('default')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:#B40A29"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:#B40A29;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">CAD</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Cadillac F1 🆕</div>
+            <div class="team-row-drivers">Bottas · Pérez</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">0</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">10th</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:0%;background:#B40A29"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Michael Andretti</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>Nick Chester</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@CadillacVSeries</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>The General</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Cadillac F1 🆕</div>
-          <div class="team-row-drivers">Bottas · Pérez</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">0</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">10th</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:0%;background:#B40A29"></div></div>
       </div>
 
       <!-- 11th: Aston Martin -->
-      <div class="team-row" onclick="selectTeamTheme('aston')">
-        <div class="team-color-bar" style="background:var(--team-aston)"></div>
-        <div class="team-logo-wrap">
-          <div style="width:64px;height:36px;background:var(--team-aston);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">AMR</div>
+      <div class="team-row" onclick="this.classList.toggle('flipped'); selectTeamTheme('aston')">
+        <div class="team-row-inner">
+          <div class="team-row-front">
+          <div class="team-color-bar" style="background:var(--team-aston)"></div>
+          <div class="team-logo-wrap">
+            <div style="width:64px;height:36px;background:var(--team-aston);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;color:#fff;font-size:0.7rem;letter-spacing:1px">AMR</div>
+          </div>
+          <div class="team-row-info">
+            <div class="team-row-name">Aston Martin</div>
+            <div class="team-row-drivers">Alonso · Stroll</div>
+          </div>
+          <div class="team-row-stats">
+            <div class="trs"><span class="trs-val">0</span><span class="trs-lbl">PTS</span></div>
+            <div class="trs"><span class="trs-val">11th</span><span class="trs-lbl">Constructor</span></div>
+          </div>
+          <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:0%;background:var(--team-aston)"></div></div>
+          </div>
+          <div class="team-row-back">
+            <div class="team-bio-grid">
+              <div class="t-bio-col"><strong>Principal</strong><span>Mike Krack</span></div>
+              <div class="t-bio-col"><strong>Technical / Engineers</strong><span>Dan Fallows</span></div>
+              <div class="t-bio-col"><strong>Media</strong><span>@AstonMartinF1</span></div>
+              <div class="t-bio-col"><strong>Alias</strong><span>Team Green</span></div>
+            </div>
+          </div>
         </div>
-        <div class="team-row-info">
-          <div class="team-row-name">Aston Martin</div>
-          <div class="team-row-drivers">Alonso · Stroll</div>
-        </div>
-        <div class="team-row-stats">
-          <div class="trs"><span class="trs-val">0</span><span class="trs-lbl">PTS</span></div>
-          <div class="trs"><span class="trs-val">11th</span><span class="trs-lbl">Constructor</span></div>
-        </div>
-        <div class="team-row-bar-wrap"><div class="team-row-bar" style="width:0%;background:var(--team-aston)"></div></div>
       </div>
 
     </div>
