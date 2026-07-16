@@ -113,6 +113,11 @@
   </style>
 </head>
 <body>
+  <div id="api-loading-overlay" class="api-loading-overlay">
+    <div class="api-spinner"></div>
+    <div class="api-loading-text">Loading <span>Live Data</span></div>
+  </div>
+
 
   <header class="nav-header">
     <div class="nav-inner">
@@ -149,17 +154,17 @@
       <div class="hero-content">
         <p class="hero-eyebrow">2026 Formula 1 Season — New Regulations Era</p>
         <h1 class="hero-title">Every Lap.<br/>Every Second.<br/><em>Every Stat.</em></h1>
-        <p class="hero-sub">New cars, new teams, new era. Russell leads the championship after 2 rounds.</p>
+        <p class="hero-sub" id="hero-sub-desc">New cars, new teams, new era. Follow the championship standings.</p>
       </div>
-      <div class="hero-race-card">
+      <div class="hero-race-card" id="hero-next-race-card">
         <div class="race-card-label">Next Race</div>
-        <div class="race-card-round">Round 03</div>
-        <div class="race-card-name">Japanese Grand Prix</div>
-        <div class="race-card-location">
-          <img src="https://flagcdn.com/w40/jp.png" alt="Japan" class="race-flag" />
-          Suzuka, Japan
+        <div class="race-card-round" id="next-race-round">Round --</div>
+        <div class="race-card-name" id="next-race-name">Loading...</div>
+        <div class="race-card-location" id="next-race-location">
+          <img src="" alt="" class="race-flag" id="next-race-flag" style="display:none;" />
+          <span>-</span>
         </div>
-        <div class="race-card-date">March 27–29, 2026</div>
+        <div class="race-card-date" id="next-race-date">-</div>
         <div class="race-card-countdown">
           <div class="countdown-block"><span class="cd-num" id="cd-days">--</span><span class="cd-lbl">Days</span></div>
           <div class="countdown-block"><span class="cd-num" id="cd-hrs">--</span><span class="cd-lbl">Hrs</span></div>
@@ -189,97 +194,8 @@
         </div>
         <table class="standings-table">
           <thead><tr><th>Pos</th><th>Driver</th><th>Team</th><th class="pts-col">PTS</th></tr></thead>
-          <tbody>
-            <tr class="standing-row p1">
-              <td class="pos-cell"><span class="pos">1</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_60_2026mercedesgeorus01right.png" alt="RUS" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=GR&background=00D2BE&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">George Russell</span><span class="driver-abbr">RUS</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-mercedes)"></span>Mercedes</td>
-              <td class="pts-col"><strong>51</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">2</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_61_2026mercedesandant01right.png" alt="ANT" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=KA&background=00D2BE&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Kimi Antonelli</span><span class="driver-abbr">ANT</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-mercedes)"></span>Mercedes</td>
-              <td class="pts-col"><strong>47</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">3</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_62_2026ferrarichalec01right.png" alt="LEC" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=CL&background=E8002D&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Charles Leclerc</span><span class="driver-abbr">LEC</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-ferrari)"></span>Ferrari</td>
-              <td class="pts-col"><strong>34</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">4</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_63_2026ferrarilewham01right.png" alt="HAM" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=LH&background=E8002D&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Lewis Hamilton</span><span class="driver-abbr">HAM</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-ferrari)"></span>Ferrari</td>
-              <td class="pts-col"><strong>33</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">5</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_67_2026haasf1teamolibea01right.png" alt="BEA" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=OB&background=B6BABD&color=111&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Oliver Bearman</span><span class="driver-abbr">BEA</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-haas)"></span>Haas</td>
-              <td class="pts-col"><strong>17</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">6</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_64_2026mclarenlannor01right.png" alt="NOR" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=LN&background=FF8000&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Lando Norris</span><span class="driver-abbr">NOR</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-mclaren)"></span>McLaren</td>
-              <td class="pts-col"><strong>15</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">7</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_72_2026alpinepiegas01right.png" alt="GAS" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=PG&background=0093CC&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Pierre Gasly</span><span class="driver-abbr">GAS</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-alpine)"></span>Alpine</td>
-              <td class="pts-col"><strong>9</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">8</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_68_2026redbullracingmaxver01right.png" alt="VER" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=MV&background=3671C6&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Max Verstappen</span><span class="driver-abbr">VER</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-redbull)"></span>Red Bull</td>
-              <td class="pts-col"><strong>8</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">9</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_70_2026racingbullslialaw01right.png" alt="LAW" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=LL&background=4169C8&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Liam Lawson</span><span class="driver-abbr">LAW</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-rb)"></span>Racing Bulls</td>
-              <td class="pts-col"><strong>8</strong></td>
-            </tr>
-            <tr class="standing-row">
-              <td class="pos-cell"><span class="pos">10</span></td>
-              <td class="driver-cell">
-                <img src="images/imgi_71_2026racingbullsarvlin01right.png" alt="LIN" class="driver-thumb" onerror="this.src='https://ui-avatars.com/api/?name=AL&background=4169C8&color=fff&size=32&bold=true&rounded=true'"/>
-                <div><span class="driver-name">Arvid Lindblad</span><span class="driver-abbr">LIN</span></div>
-              </td>
-              <td><span class="team-dot" style="background:var(--team-rb)"></span>Racing Bulls</td>
-              <td class="pts-col"><strong>4</strong></td>
-            </tr>
+          <tbody id="home-driver-standings">
+            <!-- Populated dynamically via OpenF1 API -->
           </tbody>
         </table>
       </div>
@@ -325,120 +241,10 @@
     <section class="chart-section">
       <div class="section-header">
         <h2 class="section-title">Constructor Standings</h2>
-        <span class="section-sub">After Round 2 — China</span>
+        <span class="section-sub" id="home-chart-sub">Loading...</span>
       </div>
-      <div class="constructor-chart">
-
-        <div class="chart-row">
-          <span class="chart-team-name">Mercedes</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:100%;background:var(--team-mercedes)">
-              <span class="chart-bar-pos">P1</span>
-            </div>
-          </div>
-          <span class="chart-pts">98</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">Ferrari</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:68%;background:var(--team-ferrari)">
-              <span class="chart-bar-pos">P2</span>
-            </div>
-          </div>
-          <span class="chart-pts">67</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">McLaren</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:18%;background:var(--team-mclaren)">
-              <span class="chart-bar-pos">P3</span>
-            </div>
-          </div>
-          <span class="chart-pts">18</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">TGR Haas</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:17%;background:var(--team-haas)">
-              <span class="chart-bar-pos" style="color:#111">P4</span>
-            </div>
-          </div>
-          <span class="chart-pts">17</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">Red Bull</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:12%;background:var(--team-redbull)">
-              <span class="chart-bar-pos">P5</span>
-            </div>
-          </div>
-          <span class="chart-pts">12</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">Racing Bulls</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:12%;background:var(--team-rb)">
-              <span class="chart-bar-pos">P6</span>
-            </div>
-          </div>
-          <span class="chart-pts">12</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">Alpine</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:10%;background:var(--team-alpine)">
-              <span class="chart-bar-pos">P7</span>
-            </div>
-          </div>
-          <span class="chart-pts">10</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">Audi</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:2%;background:var(--team-sauber)">
-              <span class="chart-bar-pos" style="color:#111">P8</span>
-            </div>
-          </div>
-          <span class="chart-pts">2</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">Williams</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:2%;background:var(--team-williams)">
-              <span class="chart-bar-pos" style="color:#111">P9</span>
-            </div>
-          </div>
-          <span class="chart-pts">2</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">Cadillac</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:1%;background:#B40A29;min-width:28px">
-              <span class="chart-bar-pos">P10</span>
-            </div>
-          </div>
-          <span class="chart-pts">0</span>
-        </div>
-
-        <div class="chart-row">
-          <span class="chart-team-name">Aston Martin</span>
-          <div class="chart-bar-track">
-            <div class="chart-bar-fill" style="width:1%;background:var(--team-aston);min-width:28px">
-              <span class="chart-bar-pos">P11</span>
-            </div>
-          </div>
-          <span class="chart-pts">0</span>
-        </div>
-
+      <div class="constructor-chart" id="home-constructor-standings">
+        <!-- Populated dynamically via OpenF1 API -->
       </div>
     </section>
 
@@ -457,10 +263,12 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="api.js"></script>
   <script>
-    const NEXT_RACE = new Date('2026-03-29T05:00:00Z');
+    let NEXT_RACE_DATE = null;
     function updateCountdown() {
-      const diff = NEXT_RACE - new Date();
+      if (!NEXT_RACE_DATE) return;
+      const diff = NEXT_RACE_DATE - new Date();
       const pad = n => String(Math.max(0,n)).padStart(2,'0');
       if (diff <= 0) {
         ['cd-days','cd-hrs','cd-min','cd-sec'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent='00'; });
@@ -473,8 +281,11 @@
       if(m) m.textContent = pad(Math.floor((diff%3600000)/60000));
       if(s) s.textContent = pad(Math.floor((diff%60000)/1000));
     }
-    updateCountdown();
     setInterval(updateCountdown, 1000);
+    window.setNextRaceDate = function(dateStr) {
+      NEXT_RACE_DATE = new Date(dateStr);
+      updateCountdown();
+    };
   </script>
 </body>
 </html>
